@@ -1,35 +1,40 @@
 import tkinter as tk
 from tkinter import ttk
 
+background = '#4a4848'
+background_btn = '#636161'
+foreground = 'white'
+
 class Currency:
     def __init__(self, root):
         self.root = root
         self.root.title("Currency Converter")
         self.root.geometry("500x400")
         self.root.minsize(300, 200)
+        self.root.configure(bg=background)
 
-        self.label = tk.Label(root, text="Wähle hier aus von welcher Währung du umrechnen willst:")
+        self.label = tk.Label(root, text="Wähle hier aus von welcher Währung du umrechnen willst:", bg=background, fg=foreground)
         self.label.pack(pady=10)
 
         self.askcombobox = ttk.Combobox(root, values=["EUR", "USD", "GBP", "JPY"])
         self.askcombobox.pack(pady=10)
 
-        self.entry_label = tk.Label(root, text="Gib den Betrag ein:")
+        self.entry_label = tk.Label(root, text="Gib den Betrag ein:", bg=background, fg=foreground)
         self.entry_label.pack(pady=5)
         
-        self.entry = tk.Entry(root)
+        self.entry = tk.Entry(root, bg=background, fg=foreground)
         self.entry.pack(pady=5)
         
-        self.label2 = tk.Label(root, text="Wähle hier aus in welche Währung du umrechnen willst:")
+        self.label2 = tk.Label(root, text="Wähle hier aus in welche Währung du umrechnen willst:", bg=background, fg=foreground)
         self.label2.pack(pady=10)
 
         self.askcombobox2 = ttk.Combobox(root, values=["EUR", "USD", "GBP", "JPY"])
         self.askcombobox2.pack(pady=10)
 
-        self.button = tk.Button(root, text="Bestätigen", command=self.bestätigen)
+        self.button = tk.Button(root, text="Bestätigen", command=self.bestätigen, bg=background, fg=foreground)
         self.button.pack(pady=10)
 
-        self.output_label = tk.Label(root, text="", font=("Arial", 12, "bold"))
+        self.output_label = tk.Label(root, text="", font=("Arial", 12, "bold"), bg=background, fg=foreground)
         self.output_label.pack(pady=10)
 
     def bestätigen(self):
