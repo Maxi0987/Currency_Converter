@@ -46,7 +46,7 @@ class Currency:
 
         waehrung1 = self.askcombobox.get()
         waehrung2 = self.askcombobox2.get()
-
+#Währungen in euro umrechnen
         if waehrung1 == "EUR":
             betrag_in_euro = betrag
         elif waehrung1 == "USD":
@@ -58,7 +58,7 @@ class Currency:
         else:
             self.output_label.config(text="Bitte eine gültige Währung auswählen!")
             return
-
+            # euro in gewünschte Währung
         if waehrung2 == "EUR":
             ergebnis = betrag_in_euro
         elif waehrung2 == "USD":
